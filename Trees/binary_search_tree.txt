@@ -1,0 +1,95 @@
+Binary search tree is a binary tree which at each node :
+ 1. left child key (value) is always less than the parent
+ 2. right child key is always greater than the parent
+
+examples:
+                       27
+                     /    \
+                    14    36
+                   /  \   / \
+                  10  19 31 42
+
+
+terminologies used:
+ 1. root node : quiet obious the very first node at the top
+ 2. level of node: level of node from the root node eg. root node(27) is given level=0, (14,36 are at level 1), (10, 19, 31, 42 are at level2)
+ 3.height of a node: maxium no.of levels to the node from the leave node eg.height of node (10,19,31,42) is 0 and height(14,36) is 1 and height of root node is 2
+
+
+Mathematical analysis:
+ no of nodes at level 0 is 2^0 = 1(root node)
+ no.of nodes at level 1 is 2^1 = 2
+ no.of nodes at level 2 is 2^2 = 4
+ no.of nodes at level i is 2^i 
+
+
+ for a complete binary search tree of nodes n and height h-1 :
+   n = total no of nodes in the complete binary search tree
+     = 2^0 + 2^1 + 2^2 + 2^3 + .....+2^h-1
+     = GP SUM ( 1.(2^(h-1+1) - 1))/2-1
+   n = 2^h-1
+
+  so, height of complete binary search tree is h = log2(n) 
+
+
+
+Time complexicity analysis for searching a key in the complete binary search tree:
+ for complete binary search tree, 
+  recurrence relation is T(n) = T(n/2) + c i.e at any level it will compare the key which take constant time c i.e O(1) and the rest of the problem reduces to half operations
+  
+
+  recurrence            operations          total no.of operations
+   T(n)                       c                 c
+   T(n/2)                     c                 c
+   T(n/4)                     c                 c
+   T(n/2^3)                   c                 c
+    .
+    .
+    .
+   T(n/2^(h-1))          ..............         c
+ 
+
+
+  to make n/2^(h-1) = 1
+         n = 2^(h-1)
+         
+
+         log2(n) = h
+
+  sum.of opearatioins = c*h
+                      = c*log2(n)
+
+ so , the time complexicity is 0(log2(n))
+
+same is true for deletion and insertion. 
+
+
+but that was in the best case analysis ( assuming complete binary search tree)
+
+
+In the worst case analysis:
+  it could be possible that we can have binary search tree something like shown below
+
+         15
+           \
+            20
+             \
+              30
+               \
+               40
+   so, in this case insertion, deletion and retrieval takes 0(n) time complexicity
+ 
+
+In summary:
+  1. Best case analysis(insertion, retrieval, deletions)  of binary search tree is 0(log2(n))
+  2. Worst case analysis(insertion, retrieval, deletions)  of binary searchtree is 0(n)
+
+
+To make best case always we balance binary search tree so that we always take best case advantage, for maintaining balanced binary search tree we have two data structures:
+  1. AVL tree data structure
+  2. Red black tree data structure
+  3. 2-3 tree data structure 
+           
+
+
+

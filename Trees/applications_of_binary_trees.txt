@@ -1,0 +1,8 @@
+
+Following are application of BST's:
+ 1. Implimenting routing table in router
+ 2. Data compression code 
+ 3. Implimentation of expression parsers
+ 4. To solve database problem such as indexing 
+ 5. Expression evaluation
+

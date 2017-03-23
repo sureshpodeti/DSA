@@ -1,0 +1,10 @@
+
+
+Following are computer science application of tree data structures:
+  1. Linux and windows folder structure 
+  2. HTML document object model (DOM) 
+  3. Network routing 
+  4. Syntax tree in compilers , for evaluting the expressions
+  5. Trie tree as auto corrector and spell applications used by google and microsoft word application and mobile key pads
+  6. Next move in the games, mainly artificial intellegent games (opponent is CPU)
+ 

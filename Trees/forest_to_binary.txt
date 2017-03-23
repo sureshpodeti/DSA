@@ -1,0 +1,5 @@
+Forest can be converted to binary tree as follows:
+ 1. convert each tree in the forest to binary tree first ( in this conversion the resulted binary tree is left weighted always)
+ 2. if {A,B,C} are binary trees in the forests, then make B as the right subtree of A, and C as the right subtree of B so on..
+
+ After finishing , you will end up with a binary tree.
