@@ -1,0 +1,36 @@
+Binary tree classifications are:
+ 1. Binary tree
+ 2. strict/proper binary tree
+ 3. complete binary tree
+
+
+
+Binary tree:
+ Each node can have at most 2 children (i.e atmost means can have 0, 1, and 2) 
+
+   A 
+  /\
+ B  C
+
+
+Strict binary tree:
+ Each node can have eighter only 0 or 2 children. 
+
+  A
+ /\
+B  C
+   /\
+  D E
+
+
+Complete binary tree:
+ All levels except possilbly the last one are completly filled i.e must have 2 children
+
+   A
+  / \
+  B  C
+ /\  /\
+D E  F G
+
+
+

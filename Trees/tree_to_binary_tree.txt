@@ -1,0 +1,6 @@
+Any tree can be converted into binary tree as shown below :
+1. Root node of the tree becomes root node of binary tree
+2. left child of tree becomes left child of binary tree
+3. first sibling of the tree becomes right child of the binary tree
+
+This rule is followed  at each node
