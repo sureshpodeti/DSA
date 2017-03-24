@@ -1,0 +1,71 @@
+
+Two ways to solve recurrence relation:
+ 1. substitution method
+ 2. recursion tree method
+
+recursion tree method: 
+
+example.1:
+      T(n) = T(n/2) + c              n>1,  binary search tree recurrence relation
+           = 1        n<=1
+suppose for height of tree, h 
+relation          no.of operations
+T(n)                   c
+T(n/2)                 c
+T(n/(2^2)              c
+.
+.
+.
+T(n/(2^h-1)            c 
+=============================
+ total no.of operations c*h
+=============================
+
+we know T(1) = 1
+ n/2^(h-1) = 1 
+ n = 2^(h-1)
+ h = c + log2(n) ---------------------1
+
+so the time complexicity = no.of operation  algorithms undergoes
+                         = c*h
+                  substituting equation 1
+                          = c + log2(n)
+                           ~ log2(n)
+
+
+so the time complexicity is log2(n)
+
+
+
+example.2:
+       T(n) = T(n-1) + T(n-2) + c   , n>=1
+             = 1     n=1        -----------1
+      
+relation                                   no.of operations
+T(n)                                           c
+T(n-1) + T(n-2)                               2c
+T(n-2)+ 2T(n-3) + T(n-4)                      4c
+T(n-(n-1)) + 2T(n-(n-2))+ T(n-(n-3)) = T(1) + 2T(2)+T(3)   2^(n-1) *c
+
+======================================================================
+for n operations,           c[2^0 + 2^1 + ...+ 2^(n-1)]
+======================================================================
+      = c [1*(2^(n-1+1) - 1)/1]
+       = c*2^n
+
+so the time complexicity of fibonacci series reccursive algorithm would be O(2^n)                             
+
+
+ T(n-1) = T(n-2) + T(n-3) + c  -----------2
+       T(n-2) = T(n-3) + T(n-4) + c  -----------3
+   substituting eq.2 in eq.1
+      T(n) = 2T(n-2) + T(n-3) + c
+   substituting eq.3 in eq.2
+      T(n) = T(n-3) + 2 (n-3) + 2(T-4)
+           =  3T(n-3) + 4T (n-4) + c
+
+
+      
+ 
+ 
+
