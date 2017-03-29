@@ -1,0 +1,94 @@
+Tree rotations:
+ applications: we can apply this concept in AVL trees
+
+
+concept:
+ A rotation in an operation which transforms one tree into another as follows:
+#. right rotation of node v means
+
+           v
+          /
+         /
+        u
+
+        pin its child (dont get confusion on which child to consider that will be explained in avl_trees) and make v (on which we need to perform rotation) right child of pinned node
+       
+        u
+         \
+          \
+           v
+        
+#. If node u is a left child of v then a a right rotation makes v the new right child of u, the old right child of u(if any) becomes the new left child of v, and the old parent of v(if any)becomes the new parent of u.
+
+
+      v                    right rotation               u
+     / \                  ---------------->            / \     
+    u   C                                              A  v
+   / \                    left rotation                  / \
+  A   B                   <---------------               B   C
+
+
+
+
+we have four cases:
+1. LL Rotation
+  note: v is the node on which rotation applied, u the pinned node (we assume), x is the node inserted 
+            
+                v
+               / L
+              u
+             / L
+            x  
+
+  if we encounter LL rotation , solution is to apply Right rotation of the grand parent of x(v) about the parent (u)
+   
+             u
+            / \
+           x   v
+
+2. RR Rotation
+       
+        v 
+         \ R
+          u
+           \ R
+            x
+  if we encounter RR rotation, solution is to apply Left rotation of the  grand parent of x(v) about the parent (u)
+   
+               u
+              / \
+              v  x
+
+3. LR rotation 
+
+     v 
+    / L
+   u
+    \ R
+     x
+
+  if we encounter LR rotation, solution is 1. apply left rotation of parent x(u) about x(pinned) 2. apply the right rotation of v ( previous grand parent of x) with respect to its present child (x)
+            
+                 v
+                /   
+               x           ------------>        x
+              /                                / \
+             u                                u   v
+
+4. RL rotation
+   
+              v
+               \ R
+                u
+               / L
+              x
+    if we encounter RL rotation, solution is 1. apply right rotation of parent of x (u) about x(pinned)  2.apply the left rotation of v (previous grand parent of x) with respect to its present child (x)
+
+              v
+               \
+                x        ------------>         x
+                 \                            / \
+                  u                           v  u
+
+
+            
